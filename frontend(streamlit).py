@@ -4,11 +4,14 @@ import numpy as np
 import pickle
 
 model_filename = 'trained_model.pkl'
-with open(model_filename, 'rb') as f:
-    model_data = pickle.load(f)
-
-weights = model_data['weights']
-preprocessor = model_data['preprocessor']
+try:
+    with open(model_filename, 'rb') as f:
+        model_data = pickle.load(f)
+    weights = model_data['weights']
+    preprocessor = model_data['preprocessor']
+except FileNotFoundError:
+    st.error("The model file was not found. Please check the file path.")
+    st.stop()
 
 st.title("Space Traffic Density Prediction")
 
