@@ -30,7 +30,7 @@ if st.button("Predict Traffic Density"):
 
         transformed_input = preprocessor.transform(input_data).toarray()
         transformed_input = np.c_[np.ones((transformed_input.shape[0], 1)), transformed_input]
-        prediction = np.dot(transformed_input, weights)
+        prediction = np.dot(transformed_input, weights).flatten()
 
         st.success(f"Predicted Traffic Density: {prediction[0]:.2f}")
     except Exception as e:
