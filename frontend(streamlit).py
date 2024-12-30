@@ -4,7 +4,7 @@ import numpy as np
 import pickle
 
 # Load the pre-trained model and preprocessor
-model_filename = 'C:/Users/karth/OneDrive/Desktop/abi/trained_model.pkl'
+model_filename = 'C:/infosys intern/trained_model (1).pkl'
 with open(model_filename, 'rb') as f:
     model_data = pickle.load(f)
 
